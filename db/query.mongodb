@@ -1,0 +1,645 @@
+use("db_incidencias");
+db.createCollection("incidencia", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_incidencia", "categoria_incidencia", "tipo_incidencia", "descripcion_incidencia", "fecha_incidencia","equipo_incidencia", "lugar_incidencia", "trainner_reporta_incidencia"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                categoria_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                tipo_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                },
+                descripcion_incidencia: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                fecha_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                },
+                equipo_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                },
+                lugar_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_medico debe ser un número y estar comprendido entre 0 y 20"
+                },
+                trainner_reporta_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                },
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("equipo", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_equipo", "pantalla_equipo", "torre_equipo", "teclado_equipo", "mouse_equipo","diadema_equipo", "salon_equipo"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                pantalla_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                torre_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                },
+                teclado_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                },
+                mouse_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                },
+                diadema_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                },
+                salon_equipo: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_medico debe ser un número y estar comprendido entre 0 y 20"
+                },
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("diadema", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_diadema", "marca_diadema", "color_diadema", "estado_diadema"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_diadema: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                marca_diadema: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                color_diadema: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                estado_diadema: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("mouse", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_mouse", "marca_mouse", "color_mouse", "estado_mouse"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_mouse: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                marca_mouse: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                color_mouse: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                estado_mouse: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("teclado", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_teclado", "marca_teclado", "color_teclado", "estado_teclado"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_teclado: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                marca_teclado: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                color_teclado: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                estado_teclado: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("torre", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_torre", "marca_torre", "color_torre", "estado_torre"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_torre: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                marca_torre: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                color_torre: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                estado_torre: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("pantalla", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_pantalla", "marca_pantalla", "color_pantalla", "estado_pantalla"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_pantalla: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                marca_pantalla: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                color_pantalla: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                estado_pantalla: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("email", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_email", "email", "trainner_email"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_email: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                email: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+                    description: "Debe informar un campo Email válido"
+                },
+                trainner_email: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("telefono", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_telefono", "numero_telefono", "trainner_telefono"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_telefono: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                numero_telefono: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                trainner_telefono: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("salon_trainner", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_salon_trainner", "id_trainner", "id_salon"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_salon_trainner: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                id_trainner: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                id_salon: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("salon", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_salon", "nombre_salon", "area_salon"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_salon: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                nombre_salon: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                area_salon: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("trainners", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_trainner", "nombre_trainner", "jornada_trainner"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_trainner: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                nombre_trainner: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                },
+                jornada_trainner: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("estado", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_estado", "nombre_estado"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_estado: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                nombre_estado: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("area", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_area", "nombre_area"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_area: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                nombre_area: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("reporte_incidencia", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_reporte", "fecha_reporte"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_reporte: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                fecha_reporte: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("categoria", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_categoria", "tipo_categoria"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_categoria: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                tipo_categoria: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                }
+            }
+        }
+    }
+});
+use("db_incidencias");
+db.createCollection("tipo_incidencia", {
+    capped: true,
+    size: 10000,
+    max: 5,
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            additionalProperties: false,
+            required: ["id_tipo_incidencia", "tipo_incidencia"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId',
+                },
+                id_tipo_incidencia: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 20,
+                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                },
+                tipo_incidencia: {
+                    bsonType: "string",
+                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                }
+            }
+        }
+    }
+});
