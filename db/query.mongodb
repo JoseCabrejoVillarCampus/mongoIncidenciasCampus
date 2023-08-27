@@ -16,48 +16,48 @@ db.createCollection("incidencia", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo codigoIncidencia debe ser un número y estar comprendido entre 0 y 20"
                 },
                 categoria_incidencia: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo categoria debe ser un número y estar comprendido entre 0 y 20"
                 },
                 tipo_incidencia: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo tipo debe ser un número y estar comprendido entre 0 y 20"
                 },
                 descripcion_incidencia: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo descripcion y este debe ser un string"
                 },
                 fecha_incidencia: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo fecha debe ser un número y estar comprendido entre 0 y 20"
                 },
                 equipo_incidencia: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo equipo debe ser un número y estar comprendido entre 0 y 20"
                 },
                 lugar_incidencia: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_medico debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo lugar debe ser un número y estar comprendido entre 0 y 20"
                 },
                 trainner_reporta_incidencia: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo trainner debe ser un número y estar comprendido entre 0 y 20"
                 },
             }
         }
@@ -81,43 +81,43 @@ db.createCollection("equipo", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo equipo debe ser un número y estar comprendido entre 0 y 20"
                 },
                 pantalla_equipo: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo pantalla debe ser un número y estar comprendido entre 0 y 20"
                 },
                 torre_equipo: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo torre debe ser un número y estar comprendido entre 0 y 20"
                 },
                 teclado_equipo: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo teclado debe ser un número y estar comprendido entre 0 y 20"
                 },
                 mouse_equipo: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo mouse debe ser un número y estar comprendido entre 0 y 20"
                 },
                 diadema_equipo: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_estado debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo diadema debe ser un número y estar comprendido entre 0 y 20"
                 },
                 salon_equipo: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_medico debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo salon debe ser un número y estar comprendido entre 0 y 20"
                 },
             }
         }
@@ -141,23 +141,23 @@ db.createCollection("diadema", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo diadema debe ser un número y estar comprendido entre 0 y 20"
                 },
                 marca_diadema: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo marca y este debe ser un string"
                 },
                 color_diadema: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo color y este debe ser un string"
                 },
                 estado_diadema: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo estado debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -181,23 +181,23 @@ db.createCollection("mouse", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo mouse debe ser un número y estar comprendido entre 0 y 20"
                 },
                 marca_mouse: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo marca y este debe ser un string"
                 },
                 color_mouse: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo color y este debe ser un string"
                 },
                 estado_mouse: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo estado debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -221,23 +221,23 @@ db.createCollection("teclado", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo teclado debe ser un número y estar comprendido entre 0 y 20"
                 },
                 marca_teclado: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo marca y este debe ser un string"
                 },
                 color_teclado: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo color y este debe ser un string"
                 },
                 estado_teclado: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo estado debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -261,23 +261,23 @@ db.createCollection("torre", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo torre debe ser un número y estar comprendido entre 0 y 20"
                 },
                 marca_torre: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo marca y este debe ser un string"
                 },
                 color_torre: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo color y este debe ser un string"
                 },
                 estado_torre: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo estado debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -301,23 +301,23 @@ db.createCollection("pantalla", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo pantalla debe ser un número y estar comprendido entre 0 y 20"
                 },
                 marca_pantalla: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo marca y este debe ser un string"
                 },
                 color_pantalla: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo color y este debe ser un string"
                 },
                 estado_pantalla: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_datosUsuarios debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo estado debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -341,7 +341,7 @@ db.createCollection("email", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo codigoEmail debe ser un número y estar comprendido entre 0 y 20"
                 },
                 email: {
                     bsonType: "string",
@@ -352,7 +352,7 @@ db.createCollection("email", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo emailTrainner debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -376,18 +376,18 @@ db.createCollection("telefono", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo codTelefono debe ser un número y estar comprendido entre 0 y 20"
                 },
                 numero_telefono: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo numeroTelefono y este debe ser un string"
                 },
                 trainner_telefono: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo telefonoTrainner debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -411,19 +411,19 @@ db.createCollection("salon_trainner", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo salonTrainner debe ser un número y estar comprendido entre 0 y 20"
                 },
                 id_trainner: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo trainner debe ser un número y estar comprendido entre 0 y 20"
                 },
                 id_salon: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo salon debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -447,18 +447,18 @@ db.createCollection("salon", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo salon debe ser un número y estar comprendido entre 0 y 20"
                 },
                 nombre_salon: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo nombre y este debe ser un string"
                 },
                 area_salon: {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo area debe ser un número y estar comprendido entre 0 y 20"
                 }
             }
         }
@@ -482,17 +482,17 @@ db.createCollection("trainners", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo trainner debe ser un número y estar comprendido entre 0 y 20"
                 },
                 nombre_trainner: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo nombre y este debe ser un string"
                 },
                 jornada_trainner: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo jornada y este debe ser un string"
                 }
             }
         }
@@ -516,12 +516,12 @@ db.createCollection("estado", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo estado debe ser un número y estar comprendido entre 0 y 20"
                 },
                 nombre_estado: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo nombre y este debe ser un string"
                 }
             }
         }
@@ -545,12 +545,12 @@ db.createCollection("area", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo area debe ser un número y estar comprendido entre 0 y 20"
                 },
                 nombre_area: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo nombre y este debe ser un string"
                 }
             }
         }
@@ -574,12 +574,12 @@ db.createCollection("reporte_incidencia", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo reporte debe ser un número y estar comprendido entre 0 y 20"
                 },
                 fecha_reporte: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo fecha y este debe ser un string"
                 }
             }
         }
@@ -603,12 +603,12 @@ db.createCollection("categoria", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo categoria debe ser un número y estar comprendido entre 0 y 20"
                 },
                 tipo_categoria: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo tipo y este debe ser un string"
                 }
             }
         }
@@ -632,12 +632,12 @@ db.createCollection("tipo_incidencia", {
                     bsonType: "int",
                     minimum: 0,
                     maximum: 20,
-                    description: "El campo cit_codigo debe ser un número y estar comprendido entre 0 y 20"
+                    description: "El campo tipo debe ser un número y estar comprendido entre 0 y 20"
                 },
                 tipo_incidencia: {
                     bsonType: "string",
                     pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
-                    description: "Debe informar el campo usu_telefono y este debe ser un string"
+                    description: "Debe informar el campo tipoIncidencia y este debe ser un string"
                 }
             }
         }

@@ -1,0 +1,527 @@
+use("db_incidencias");
+db.incidencia.insertMany([{
+        id_incidencia: 1,
+        categoria_incidencia: 1,
+        tipo_incidencia: 1,
+        descripcion_incidencia: "Descripción de la incidencia 1",
+        fecha_incidencia: 1,
+        equipo_incidencia: 1,
+        lugar_incidencia: 1,
+        trainner_reporta_incidencia: 1
+    },
+    {
+        id_incidencia: 2,
+        categoria_incidencia: 2,
+        tipo_incidencia: 2,
+        descripcion_incidencia: "Descripción de la incidencia 2",
+        fecha_incidencia: 2,
+        equipo_incidencia: 2,
+        lugar_incidencia: 2,
+        trainner_reporta_incidencia: 2
+    },
+    {
+        id_incidencia: 3,
+        categoria_incidencia: 3,
+        tipo_incidencia: 3,
+        descripcion_incidencia: "Descripción de la incidencia 3",
+        fecha_incidencia: 3,
+        equipo_incidencia: 3,
+        lugar_incidencia: 3,
+        trainner_reporta_incidencia: 3
+    },
+    {
+        id_incidencia: 4,
+        categoria_incidencia: 4,
+        tipo_incidencia: 4,
+        descripcion_incidencia: "Descripción de la incidencia 4",
+        fecha_incidencia: 4,
+        equipo_incidencia: 4,
+        lugar_incidencia: 4,
+        trainner_reporta_incidencia: 4
+    },
+    {
+        id_incidencia: 5,
+        categoria_incidencia: 5,
+        tipo_incidencia: 5,
+        descripcion_incidencia: "Descripción de la incidencia 5",
+        fecha_incidencia: 5,
+        equipo_incidencia: 5,
+        lugar_incidencia: 5,
+        trainner_reporta_incidencia: 5
+    },
+]);
+use("db_incidencias");
+db.equipo.insertMany([{
+        id_equipo: 1,
+        pantalla_equipo: 1,
+        torre_equipo: 1,
+        teclado_equipo: 1,
+        mouse_equipo: 1,
+        diadema_equipo: 1,
+        salon_equipo: 1
+    },
+    {
+        id_equipo: 2,
+        pantalla_equipo: 2,
+        torre_equipo: 2,
+        teclado_equipo: 2,
+        mouse_equipo: 2,
+        diadema_equipo: 2,
+        salon_equipo: 2
+    },
+    {
+        id_equipo: 3,
+        pantalla_equipo: 3,
+        torre_equipo: 3,
+        teclado_equipo: 3,
+        mouse_equipo: 3,
+        diadema_equipo: 3,
+        salon_equipo: 3
+    },
+    {
+        id_equipo: 4,
+        pantalla_equipo: 4,
+        torre_equipo: 4,
+        teclado_equipo: 4,
+        mouse_equipo: 4,
+        diadema_equipo: 4,
+        salon_equipo: 4
+    },
+    {
+        id_equipo: 5,
+        pantalla_equipo: 5,
+        torre_equipo: 5,
+        teclado_equipo: 5,
+        mouse_equipo: 5,
+        diadema_equipo: 5,
+        salon_equipo: 5
+    }
+]);
+use("db_incidencias");
+db.diadema.insertMany([{
+        id_diadema: 1,
+        marca_diadema: "Marca Diadema 1",
+        color_diadema: "Rojo",
+        estado_diadema: 1
+    },
+    {
+        id_diadema: 2,
+        marca_diadema: "Marca Diadema 2",
+        color_diadema: "Azul",
+        estado_diadema: 2
+    },
+    {
+        id_diadema: 3,
+        marca_diadema: "Marca Diadema 3",
+        color_diadema: "Amarillo",
+        estado_diadema: 3
+    },
+    {
+        id_diadema: 4,
+        marca_diadema: "Marca Diadema 4",
+        color_diadema: "Verde",
+        estado_diadema: 4
+    },
+    {
+        id_diadema: 5,
+        marca_diadema: "Marca Diadema 5",
+        color_diadema: "Negro",
+        estado_diadema: 5
+    }
+]);
+use("db_incidencias");
+db.mouse.insertMany([{
+        id_mouse: 1,
+        marca_mouse: "Marca Mouse 1",
+        color_mouse: "Negro",
+        estado_mouse: 1
+    },
+    {
+        id_mouse: 2,
+        marca_mouse: "Marca Mouse 2",
+        color_mouse: "Azul",
+        estado_mouse: 2
+    },
+    {
+        id_mouse: 3,
+        marca_mouse: "Marca Mouse 3",
+        color_mouse: "Amarillo",
+        estado_mouse: 3
+    },
+    {
+        id_mouse: 4,
+        marca_mouse: "Marca Mouse 4",
+        color_mouse: "Verde",
+        estado_mouse: 4
+    },
+    {
+        id_mouse: 5,
+        marca_mouse: "Marca Mouse 5",
+        color_mouse: "Negro",
+        estado_mouse: 5
+    }
+]);
+use("db_incidencias");
+db.teclado.insertMany([{
+        id_teclado: 1,
+        marca_teclado: "Marca Teclado 1",
+        color_teclado: "Blanco",
+        estado_teclado: 1
+    },
+    {
+        id_teclado: 2,
+        marca_teclado: "Marca Teclado 2",
+        color_teclado: "Azul",
+        estado_teclado: 2
+    },
+    {
+        id_teclado: 3,
+        marca_teclado: "Marca Teclado 3",
+        color_teclado: "Amarillo",
+        estado_teclado: 3
+    },
+    {
+        id_teclado: 4,
+        marca_teclado: "Marca Teclado 4",
+        color_teclado: "Verde",
+        estado_teclado: 4
+    },
+    {
+        id_teclado: 5,
+        marca_teclado: "Marca Teclado 5",
+        color_teclado: "Negro",
+        estado_teclado: 5
+    }
+]);
+use("db_incidencias");
+db.torre.insertMany([{
+        id_torre: 1,
+        marca_torre: "Marca Torre 1",
+        color_torre: "Gris",
+        estado_torre: 1
+    },
+    {
+        id_torre: 2,
+        marca_torre: "Marca Torre 2",
+        color_torre: "Azul",
+        estado_torre: 2
+    },
+    {
+        id_torre: 3,
+        marca_torre: "Marca Torre 3",
+        color_torre: "Amarillo",
+        estado_torre: 3
+    },
+    {
+        id_torre: 4,
+        marca_torre: "Marca Torre 4",
+        color_torre: "Verde",
+        estado_torre: 4
+    },
+    {
+        id_torre: 5,
+        marca_torre: "Marca Torre 5",
+        color_torre: "Negro",
+        estado_torre: 5
+    }
+]);
+use("db_incidencias");
+db.pantalla.insertMany([{
+        id_pantalla: 1,
+        marca_pantalla: "Marca Pantalla 1",
+        color_pantalla: "Negro",
+        estado_pantalla: 1
+    },
+    {
+        id_pantalla: 2,
+        marca_pantalla: "Marca Pantalla 2",
+        color_pantalla: "Azul",
+        estado_pantalla: 2
+    },
+    {
+        id_pantalla: 3,
+        marca_pantalla: "Marca Pantalla 3",
+        color_pantalla: "Amarillo",
+        estado_pantalla: 3
+    },
+    {
+        id_pantalla: 4,
+        marca_pantalla: "Marca Pantalla 4",
+        color_pantalla: "Verde",
+        estado_pantalla: 4
+    },
+    {
+        id_pantalla: 5,
+        marca_pantalla: "Marca Pantalla 5",
+        color_pantalla: "Negro",
+        estado_pantalla: 5
+    }
+]);
+use("db_incidencias");
+db.email.insertMany([{
+        id_email: 1,
+        email: "ejemplo@email.com",
+        trainner_email: 1
+    },
+    {
+        id_email: 2,
+        email: "ejempl2@email.com",
+        trainner_email: 2
+    },
+    {
+        id_email: 3,
+        email: "ejempl3@email.com",
+        trainner_email: 3
+    },
+    {
+        id_email: 4,
+        email: "ejempl4@email.com",
+        trainner_email: 4
+    },
+    {
+        id_email: 5,
+        email: "ejempl5@email.com",
+        trainner_email: 5
+    }
+]);
+use("db_incidencias");
+db.telefono.insertMany([{
+        id_telefono: 1,
+        numero_telefono: "123456789",
+        trainner_telefono: 1
+    },
+    {
+        id_telefono: 2,
+        numero_telefono: "234567890",
+        trainner_telefono: 2
+    },
+    {
+        id_telefono: 3,
+        numero_telefono: "098765432",
+        trainner_telefono: 3
+    },
+    {
+        id_telefono: 4,
+        numero_telefono: "987654321",
+        trainner_telefono: 4
+    },
+    {
+        id_telefono: 5,
+        numero_telefono: "1357924680",
+        trainner_telefono: 5
+    }
+]);
+use("db_incidencias");
+db.salon_trainner.insertMany([{
+        id_salon_trainner: 1,
+        id_trainner: 1,
+        id_salon: 1
+    },
+    {
+        id_salon_trainner: 2,
+        id_trainner: 2,
+        id_salon: 2
+    },
+    {
+        id_salon_trainner: 3,
+        id_trainner: 3,
+        id_salon: 3
+    },
+    {
+        id_salon_trainner: 4,
+        id_trainner: 4,
+        id_salon: 4
+    },
+    {
+        id_salon_trainner: 5,
+        id_trainner: 5,
+        id_salon: 5
+    }
+]);
+use("db_incidencias");
+db.salon.insertMany([{
+        id_salon: 1,
+        nombre_salon: "Apolo",
+        area_salon: 1
+    },
+    {
+        id_salon: 2,
+        nombre_salon: "Sputnick",
+        area_salon: 2
+    },
+    {
+        id_salon: 3,
+        nombre_salon: "Artemis",
+        area_salon: 3
+    },
+    {
+        id_salon: 4,
+        nombre_salon: "ReviewA",
+        area_salon: 4
+    },
+    {
+        id_salon: 5,
+        nombre_salon: "ReviewB",
+        area_salon: 5
+    }
+]);
+use("db_incidencias");
+db.trainners.insertMany([{
+        id_trainner: 1,
+        nombre_trainner: "Miguel",
+        jornada_trainner: "Jornada1"
+    },
+    {
+        id_trainner: 2,
+        nombre_trainner: "Jholver",
+        jornada_trainner: "Jornada1"
+    },
+    {
+        id_trainner: 3,
+        nombre_trainner: "Vermmer",
+        jornada_trainner: "Jornada1"
+    },
+    {
+        id_trainner: 4,
+        nombre_trainner: "Roy",
+        jornada_trainner: "Jornada2"
+    },
+    {
+        id_trainner: 1,
+        nombre_trainner: "Carlos",
+        jornada_trainner: "Jornada2"
+    }
+]);
+use("db_incidencias");
+db.estado.insertMany([{
+        id_estado: 1,
+        nombre_estado: "BuenEstado"
+    },
+    {
+        id_estado: 2,
+        nombre_estado: "Dañado"
+    },
+    {
+        id_estado: 1,
+        nombre_estado: "Extraviado"
+    },
+    {
+        id_estado: 1,
+        nombre_estado: "EnReparacion"
+    },
+    {
+        id_estado: 1,
+        nombre_estado: "Otro"
+    }
+]);
+use("db_incidencias");
+db.area.insertMany([{
+        id_area: 1,
+        id_area: "CampusA"
+    },
+    {
+        id_area: 2,
+        nombre_area: "CampusB"
+    },
+    {
+        id_area: 3,
+        nombre_area: "CampusC"
+    },
+    {
+        id_area: 4,
+        nombre_area: "CampusD"
+    },
+    {
+        id_area: 5,
+        nombre_area: "CampusE"
+    }
+]);
+use("db_incidencias");
+db.reporte_incidencia.insertMany([{
+        id_reporte: 1,
+        fecha_reporte: "2023-08-27"
+    },
+    {
+        id_reporte: 2,
+        fecha_reporte: "2023-09-17"
+    },
+    {
+        id_reporte: 3,
+        fecha_reporte: "2023-11-21"
+    },
+    {
+        id_reporte: 4,
+        fecha_reporte: "2023-02-10"
+    },
+    {
+        id_reporte: 5,
+        fecha_reporte: "2023-08-27"
+    }
+]);
+use("db_incidencias");
+db.categoria.insertMany([{
+        id_categoria: 1,
+        tipo_categoria: "Tipo de categoría 1"
+    },
+    {
+        id_categoria: 2,
+        tipo_categoria: "Tipo de categoría 2"
+    },
+    {
+        id_categoria: 3,
+        tipo_categoria: "Tipo de categoría 3"
+    },
+    {
+        id_categoria: 4,
+        tipo_categoria: "Tipo de categoría 4"
+    },
+    {
+        id_categoria: 5,
+        tipo_categoria: "Tipo de categoría 5"
+    }
+]);
+use("db_incidencias");
+db.tipo_incidencia.insertMany([{
+        id_tipo_incidencia: 1,
+        tipo_incidencia: "Tipo de incidencia 1"
+    },
+    {
+        id_tipo_incidencia: 2,
+        tipo_incidencia: "Tipo de incidencia 2"
+    },
+    {
+        id_tipo_incidencia: 3,
+        tipo_incidencia: "Tipo de incidencia 3"
+    },
+    {
+        id_tipo_incidencia: 4,
+        tipo_incidencia: "Tipo de incidencia 4"
+    },
+    {
+        id_tipo_incidencia: 5,
+        tipo_incidencia: "Tipo de incidencia 5"
+    }
+]);
+
+use("db_incidencias");
+db.telefono.aggregate([
+    {
+        $lookup: {
+            from: "trainners",
+            localField: "trainner_telefono",
+            foreignField: "id_trainner",
+            as: "trainner"
+        }
+    },
+    {
+        $unwind: "$trainner"
+    },
+    {
+        $project: {
+            "_id": 0,
+            "codigoTelefono": "$id_telefono",
+            "numeroTelefono": "$numero_telefono",
+            "trainner": "$trainner.nombre_trainner"
+        }
+    }
+]);
