@@ -1,6 +1,6 @@
 import { check } from "express-validator";
 
-export const GetAllTeclados= [
+export const GetAllDiademas= [
     check("id_diadema")
     .notEmpty().withMessage("El campo diadema es Obligatorio")
     .isNumeric().withMessage("El campo diadema debe ser de tipo Numerico"),

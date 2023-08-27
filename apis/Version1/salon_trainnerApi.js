@@ -3,7 +3,7 @@ import { coneccion } from "../../BackEnd/db/atlas.js";
 
 let db = await coneccion();
 let salon_trainner = db.collection("salon_trainner");
-export const getSalonTrainrerById = async (req, res, next) => {
+export const getSalonTrainnerById = async (req, res, next) => {
     try {
         const id = parseInt(req.params.id);
         let result = await salon_trainner.aggregate([
@@ -47,7 +47,7 @@ export const getSalonTrainrerById = async (req, res, next) => {
         next(error);
     }
 };
-export const getSalonTrainrerAll = (req, res, next)=>{
+export const getSalonTrainnerAll = (req, res, next)=>{
     return new Promise(async(resolve)=>{
         let result = await salon_trainner.aggregate([
             {
@@ -84,7 +84,7 @@ export const getSalonTrainrerAll = (req, res, next)=>{
         res.send(result);
     }) 
 };
-export const postSalonTrainrer = async(req, res)=>{
+export const postSalonTrainner = async(req, res)=>{
     try{
         console.log(req.body);
         let result = await salon_trainner.insertOne(req.body);
@@ -93,7 +93,7 @@ export const postSalonTrainrer = async(req, res)=>{
         console.log(error);
         }
 };
-export const putSalonTrainrer = async (req, res)=>{
+export const putSalonTrainner = async (req, res)=>{
     try{
         const id = parseInt(req.params.id);
         let result = await salon_trainner.updateOne(
@@ -105,7 +105,7 @@ export const putSalonTrainrer = async (req, res)=>{
         res.status(422).send(error)
     }
 };
-export const delSalonTrainrer = async (req, res)=>{
+export const delSalonTrainner = async (req, res)=>{
     try{
         const id = parseInt(req.params.id);
         let result = await salon_trainner.deleteOne(
