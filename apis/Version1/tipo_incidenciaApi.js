@@ -6,7 +6,7 @@ let tipo_incidencia = db.collection("tipo_incidencia");
 export const getTipoById = async (req, res, next) => {
     try {
         const id = parseInt(req.params.id);
-        let result = await telefono.aggregate([
+        let result = await tipo_incidencia.aggregate([
             {
                 $match: { "id_tipo_incidencia": id } 
             },

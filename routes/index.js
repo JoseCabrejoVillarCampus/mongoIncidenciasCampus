@@ -178,6 +178,7 @@ import {
 import {
     GetAllTrainners
 } from '../dto/trainnersDTO.js';
+import { validationResult } from 'express-validator';
 
 const appUser = Routes();
 const appArea = Routes();
