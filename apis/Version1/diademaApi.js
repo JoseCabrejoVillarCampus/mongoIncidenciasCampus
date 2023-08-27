@@ -1,8 +1,9 @@
 import express from "express";
-import { coneccion } from "../../BackEnd/db/atlas.js";
+import { coneccion } from "../../db/atlas.js";
 
 let db = await coneccion();
 let diadema = db.collection("diadema");
+
 export const getDiademaById = async (req, res, next) => {
     try {
         const id = parseInt(req.params.id);

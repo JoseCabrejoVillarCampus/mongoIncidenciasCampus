@@ -71,7 +71,7 @@ db.usuario.insertMany([
         }
     }
 ]);
-
+use("db_incidencias");
 db.createCollection("rol",{
     validator: {
         $jsonSchema: {
@@ -129,3 +129,5 @@ db.usuario.findOne(
 );
   
 
+use('db_incidencias');
+db.usuario.find();

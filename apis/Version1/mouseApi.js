@@ -1,5 +1,5 @@
 import express from "express";
-import { coneccion } from "../../BackEnd/db/atlas.js";
+import { coneccion } from "../../db/atlas.js";
 
 let db = await coneccion();
 let mouse = db.collection("mouse");
