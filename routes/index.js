@@ -1,6 +1,4 @@
-import {
-    limitUsuario
-} from '../helpers/limit.js'
+import { limitUsuario } from '../helpers/limit.js'
 import passportHelper from '../helpers/passPortHelper.js'
 import Routes from 'express';
 import routesVersioning from 'express-routes-versioning';
@@ -127,58 +125,8 @@ import {
 } from '../apis/Version1/trainnersApi.js';
 
 //* Importacion de los middleware de las Validaciones nativas de express
-import {
-    GetAllAreas
-} from '../dto/areaDTO.js';
-import {
-    GetAllCategorias
-} from '../dto/categoriaDTO.js';
-import {
-    GetAllDiademas
-} from '../dto/diademaDTO.js';
-import {
-    GetAllEmails
-} from '../dto/emailDTO.js';
-import {
-    GetAllEquipos
-} from '../dto/equipoDTO.js';
-import {
-    GetAllEstados
-} from '../dto/estadoDTO.js';
-import {
-    GetAllIncidencias
-} from '../dto/incidenciaDTO.js';
-import {
-    GetAllMouses
-} from '../dto/mouseDTO.js';
-import {
-    GetAllPantallas
-} from '../dto/pantallaDTO.js';
-import {
-    GetAllReportes
-} from '../dto/reporte_incidenciaDTO.js';
-import {
-    GetAllSalonesTrainners
-} from '../dto/salon_trainnerDTO.js';
-import {
-    GetAllSalones
-} from '../dto/salonDTO.js';
-import {
-    GetAllTeclados
-} from '../dto/tecladoDTO.js';
-import {
-    GetAllTelefonos
-} from '../dto/telefonoDTO.js';
-import {
-    GetAllTipoIncidencia
-} from '../dto/tipo_incidenciaDTO.js';
-import {
-    GetAllTorres
-} from '../dto/torreDTO.js';
-import {
-    GetAllTrainners
-} from '../dto/trainnersDTO.js';
-import { validationResult } from 'express-validator';
+import { appMiddlewareDataArea, appMiddlewareParamArea } from '../middleware/areaMiddleware.js';
+
 
 const appUser = Routes();
 const appArea = Routes();
@@ -208,259 +156,293 @@ appUser.use(limitUsuario(), passportHelper.authenticate('bearer', {
 
 // * Headers 'Accept-Version: 1.0.0' 
 // ? Area
-appArea.get('/:id?', GetAllAreas, version({
-    "1.0.0": getAreaAll,
+appArea.get('/', version({
+    "1.0.0": getAreaAll
+}));
+appArea.get('/:id?', appMiddlewareParamArea, version({
     "1.0.1": getAreaById
 }));
-appArea.post('/', GetAllAreas, version({
+appArea.post('/', appMiddlewareDataArea, version({
     "1.0.0": postArea
 }));
-appArea.put('/:id', GetAllAreas, version({
+appArea.put('/:id', appMiddlewareDataArea, appMiddlewareParamArea , version({
     "1.0.0": putArea
 }));
-appArea.delete('/:id', GetAllAreas, version({
+appArea.delete('/:id', appMiddlewareParamArea, version({
     "1.0.0": delArea
 }));
 
 // ? Categoria
-appCategoria.get('/:id?', GetAllCategorias, version({
-    "1.0.0": getCategoriaAll,
+appCategoria.get('/', version({
+    "1.0.0": getCategoriaAll
+}));
+appCategoria.get('/:id?', version({
     "1.0.1": getCategoriaById
 }));
-appCategoria.post('/', GetAllCategorias, version({
+appCategoria.post('/', version({
     "1.0.0": postCategoria
 }));
-appCategoria.put('/:id', GetAllCategorias, version({
+appCategoria.put('/:id', version({
     "1.0.0": putCategoria
 }));
-appCategoria.delete('/:id', GetAllCategorias, version({
+appCategoria.delete('/:id', version({
     "1.0.0": delCategoria
 }));
 
 // ? Diadema
-appDiadema.get('/:id?', GetAllDiademas, version({
-    "1.0.0": getDiademaAll,
+appDiadema.get('/', version({
+    "1.0.0": getDiademaAll
+}));
+appDiadema.get('/:id?', version({
     "1.0.1": getDiademaById
 }));
-appDiadema.post('/', GetAllDiademas, version({
+appDiadema.post('/', version({
     "1.0.0": postDiadema
 }));
-appDiadema.put('/:id', GetAllDiademas, version({
+appDiadema.put('/:id', version({
     "1.0.0": putDiadema
 }));
-appDiadema.delete('/:id', GetAllDiademas, version({
+appDiadema.delete('/:id', version({
     "1.0.0": delDiadema
 }));
 
 // ? Email
-appEmail.get('/:id?', GetAllEmails, version({
-    "1.0.0": getEmailAll,
+appEmail.get('/', version({
+    "1.0.0": getEmailAll
+    }));
+appEmail.get('/:id?', version({
     "1.0.1": getEmailById
 }));
-appEmail.post('/', GetAllEmails, version({
+appEmail.post('/', version({
     "1.0.0": postEmail
 }));
-appEmail.put('/:id', GetAllEmails, version({
+appEmail.put('/:id', version({
     "1.0.0": putEmail
 }));
-appEmail.delete('/:id', GetAllEmails, version({
+appEmail.delete('/:id', version({
     "1.0.0": delEmail
 }));
 
 // ? Equipo
-appEquipo.get('/:id?', GetAllEquipos, version({
-    "1.0.0": getEquipoAll,
+appEquipo.get('/', version({
+    "1.0.0": getEquipoAll
+}));
+appEquipo.get('/:id?', version({
     "1.0.1": getEquipoById
 }));
-appEquipo.post('/', GetAllEquipos, version({
+appEquipo.post('/', version({
     "1.0.0": postEquipo
 }));
-appEquipo.put('/:id', GetAllEquipos, version({
+appEquipo.put('/:id', version({
     "1.0.0": putEquipo
 }));
-appEquipo.delete('/:id', GetAllEquipos, version({
+appEquipo.delete('/:id', version({
     "1.0.0": delEquipo
 }));
 
 // ? Estado
-appEstado.get('/:id?', GetAllEstados, version({
-    "1.0.0": getEstadoAll,
+appEstado.get('/', version({
+    "1.0.0": getEstadoAll
+}));
+appEstado.get('/:id?', version({
     "1.0.1": getEstadoById
 }));
-appEstado.post('/', GetAllEstados, version({
+appEstado.post('/', version({
     "1.0.0": postEstado
 }));
-appEstado.put('/:id', GetAllEstados, version({
+appEstado.put('/:id', version({
     "1.0.0": putEstado
 }));
-appEstado.delete('/:id', GetAllEstados, version({
+appEstado.delete('/:id', version({
     "1.0.0": delEstado
 }));
 
 // ? Incidencia
-appIncidencia.get('/:id?', GetAllIncidencias, version({
-    "1.0.0": getIncidenciaAll,
+appIncidencia.get('/', version({
+    "1.0.0": getIncidenciaAll
+}));
+appIncidencia.get('/:id?', version({
     "1.0.1": getIncidenciaById
 }));
-appIncidencia.post('/', GetAllIncidencias, version({
+appIncidencia.post('/', version({
     "1.0.0": postIncidencia
 }));
-appIncidencia.put('/:id', GetAllIncidencias, version({
+appIncidencia.put('/:id', version({
     "1.0.0": putIncidencia
 }));
-appIncidencia.delete('/:id', GetAllIncidencias, version({
+appIncidencia.delete('/:id', version({
     "1.0.0": delIncidencia
 }));
 
 // ? Mouse
-appMouse.get('/:id?', GetAllMouses, version({
-    "1.0.0": getMouseAll,
+appMouse.get('/', version({
+    "1.0.0": getMouseAll
+}));
+appMouse.get('/:id?', version({
     "1.0.1": getMouseById
 }));
-appMouse.post('/', GetAllMouses, version({
+appMouse.post('/', version({
     "1.0.0": postMouse
 }));
-appMouse.put('/:id', GetAllMouses, version({
+appMouse.put('/:id', version({
     "1.0.0": putMouse
 }));
-appMouse.delete('/:id', GetAllMouses, version({
+appMouse.delete('/:id', version({
     "1.0.0": delMouse
 }));
 
 // ? Pantalla
-appPantalla.get('/:id?', GetAllPantallas, version({
-    "1.0.0": getPantallaAll,
+appPantalla.get('/', version({
+    "1.0.0": getPantallaAll
+}));
+appPantalla.get('/:id?', version({
     "1.0.1": getPantallaById
 }));
-appPantalla.post('/', GetAllPantallas, version({
+appPantalla.post('/', version({
     "1.0.0": postPantalla
 }));
-appPantalla.put('/:id', GetAllPantallas, version({
+appPantalla.put('/:id', version({
     "1.0.0": putPantalla
 }));
-appPantalla.delete('/:id', GetAllPantallas, version({
+appPantalla.delete('/:id', version({
     "1.0.0": delPantalla
 }));
 
 // ? Reporte
-appReporte.get('/:id?', GetAllReportes, version({
-    "1.0.0": getReporteAll,
+appReporte.get('/', version({
+    "1.0.0": getReporteAll
+}));
+appReporte.get('/:id?', version({
     "1.0.1": getReporteById
 }));
-appReporte.post('/', GetAllReportes, version({
+appReporte.post('/', version({
     "1.0.0": postReporte
 }));
-appReporte.put('/:id', GetAllReportes, version({
+appReporte.put('/:id', version({
     "1.0.0": putReporte
 }));
-appReporte.delete('/:id', GetAllReportes, version({
+appReporte.delete('/:id', version({
     "1.0.0": delReporte
 }));
 
 // ? Salon Trainner
-appSalonTrainner.get('/:id?', GetAllSalonesTrainners, version({
-    "1.0.0": getSalonTrainnerAll,
+appSalonTrainner.get('/', version({
+    "1.0.0": getSalonTrainnerAll
+}));
+appSalonTrainner.get('/:id?', version({
     "1.0.1": getSalonTrainnerById
 }));
-appSalonTrainner.post('/', GetAllSalonesTrainners, version({
+appSalonTrainner.post('/', version({
     "1.0.0": postSalonTrainner
 }));
-appSalonTrainner.put('/:id', GetAllSalonesTrainners, version({
+appSalonTrainner.put('/:id', version({
     "1.0.0": putSalonTrainner
 }));
-appSalonTrainner.delete('/:id', GetAllSalonesTrainners, version({
+appSalonTrainner.delete('/:id', version({
     "1.0.0": delSalonTrainner
 }));
 
 // ? Salon 
-appSalon.get('/:id?', GetAllSalones, version({
-    "1.0.0": getSalonAll,
+appSalon.get('/', version({
+    "1.0.0": getSalonAll
+}));
+appSalon.get('/:id?', version({
     "1.0.1": getSalonById
 }));
-appSalon.post('/', GetAllSalones, version({
+appSalon.post('/', version({
     "1.0.0": postSalon
 }));
-appSalon.put('/:id', GetAllSalones, version({
+appSalon.put('/:id', version({
     "1.0.0": putSalon
 }));
-appSalon.delete('/:id', GetAllSalones, version({
+appSalon.delete('/:id', version({
     "1.0.0": delSalon
 }));
 
 
 // ? Teclado 
-appTeclado.get('/:id?', GetAllTeclados, version({
-    "1.0.0": getTecladoAll,
+appTeclado.get('/', version({
+    "1.0.0": getTecladoAll
+}));
+appTeclado.get('/:id?', version({
     "1.0.1": getTecladoById
 }));
-appTeclado.post('/', GetAllTeclados, version({
+appTeclado.post('/', version({
     "1.0.0": postTeclado
 }));
-appTeclado.put('/:id', GetAllTeclados, version({
+appTeclado.put('/:id', version({
     "1.0.0": putTeclado
 }));
-appTeclado.delete('/:id', GetAllTeclados, version({
+appTeclado.delete('/:id', version({
     "1.0.0": delTeclado
 }));
 
 // ? Telefono 
-appTelefono.get('/:id?', GetAllTelefonos, version({
-    "1.0.0": getTelefonoAll,
+appTelefono.get('/', version({
+    "1.0.0": getTelefonoAll
+}));
+appTelefono.get('/:id?', version({
     "1.0.1": getTelefonoById
 }));
-appTelefono.post('/', GetAllTelefonos, version({
+appTelefono.post('/', version({
     "1.0.0": postTelefono
 }));
-appTelefono.put('/:id', GetAllTelefonos, version({
+appTelefono.put('/:id', version({
     "1.0.0": putTelefono
 }));
-appTelefono.delete('/:id', GetAllTelefonos, version({
+appTelefono.delete('/:id', version({
     "1.0.0": delTelefono
 }));
 
 // ? Tipo 
-appTipo.get('/:id?', GetAllTipoIncidencia, version({
-    "1.0.0": getTipoAll,
+appTipo.get('/', version({
+    "1.0.0": getTipoAll
+}));
+appTipo.get('/:id?', version({
     "1.0.1": getTipoById
 }));
-appTipo.post('/', GetAllTipoIncidencia, version({
+appTipo.post('/', version({
     "1.0.0": postTipo
 }));
-appTipo.put('/:id', GetAllTipoIncidencia, version({
+appTipo.put('/:id', version({
     "1.0.0": putTipo
 }));
-appTipo.delete('/:id', GetAllTipoIncidencia, version({
+appTipo.delete('/:id', version({
     "1.0.0": delTipo
 }));
 
 // ? Torre 
-appTorre.get('/:id?', GetAllTorres, version({
-    "1.0.0": getTorreAll,
+appTorre.get('/', version({
+    "1.0.0": getTorreAll
+}));
+appTorre.get('/:id?', version({
     "1.0.1": getTorreById
 }));
-appTorre.post('/', GetAllTorres, version({
+appTorre.post('/', version({
     "1.0.0": postTorre
 }));
-appTorre.put('/:id', GetAllTorres, version({
+appTorre.put('/:id', version({
     "1.0.0": putTorre
 }));
-appTorre.delete('/:id', GetAllTorres, version({
+appTorre.delete('/:id', version({
     "1.0.0": delTorre
 }));
 
 // ? Trainner
-appTrainners.get('/:id?', GetAllTrainners, version({
-    "1.0.0": getTorreAll,
-    "1.0.1": getTorreById
+appTrainners.get('/', version({
+    "1.0.0": getTrainnerAll
 }));
-appTrainners.post('/', GetAllTrainners, version({
-    "1.0.0": postTorre
+appTrainners.get('/:id?', version({
+    "1.0.0": getTrainnerAll
 }));
-appTrainners.put('/:id', GetAllTrainners, version({
-    "1.0.0": putTorre
+appTrainners.post('/', version({
+    "1.0.0": postTrainner
 }));
-appTrainners.delete('/:id', GetAllTrainners, version({
-    "1.0.0": delTorre
+appTrainners.put('/:id', version({
+    "1.0.0": putTrainner
+}));
+appTrainners.delete('/:id', version({
+    "1.0.0": delTrainner
 }));
 
 //*Exportamos las apps hacia app.js en la parte principal del codigo
