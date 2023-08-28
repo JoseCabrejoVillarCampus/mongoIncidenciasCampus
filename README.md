@@ -63,6 +63,17 @@ JWT_PRIVATE_KEY=""
 ```
 En el campo de MY_SERVER ingrese un hostname y un puerto a su elección(preferiblemente mayor al 5000). Recuerde que por defecto el local host requiere que el hostname es 127.0.0.1. pero puede ser,
 ATLAS_USER es el usuario de la base de datos registrado en Atlas y ATLAS_PASSWORD es la contraseña que le asignamos, ATLAS_DB es el nombre de la base de datos y el JWT_PRIVATE_KEY es la palabra secreta que usaremos para generar los tokens de JWT
+
+Hemos Creado un Usuario con acceso a la db de Moongo npara el testeo:
+
+```
+MY_SERVER={"hostname":"","port":""}
+ATLAS_USER="miguel"
+ATLAS_PASSWORD="miguel"
+ATLAS_DB="db_incidencias"
+JWT_PRIVATE_KEY=""
+```
+
 <br><br>
 
 # INICIAR nodemon
