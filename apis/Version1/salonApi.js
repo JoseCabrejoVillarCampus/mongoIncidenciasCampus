@@ -5,7 +5,7 @@ let db = await coneccion();
 let salon = db.collection("salon");
 export const getSalonById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await salon.aggregate([
             {
                 $match: { "id_salon": id } 
@@ -73,7 +73,7 @@ export const postSalon = async(req, res)=>{
 };
 export const putSalon = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await salon.updateOne(
             { "id_salon": id},
             { $set: req.body }
@@ -85,7 +85,7 @@ export const putSalon = async (req, res)=>{
 };
 export const delSalon = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await salon.deleteOne(
             { "id_salon": id }
         );

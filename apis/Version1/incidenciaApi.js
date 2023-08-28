@@ -5,7 +5,7 @@ let db = await coneccion();
 let incidencia = db.collection("incidencia");
 export const getIncidenciaById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
 
         let result = await incidencia.aggregate([
             {
@@ -168,7 +168,7 @@ export const postIncidencia = async(req, res)=>{
 };
 export const putIncidencia = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await incidencia.updateOne(
             { "id_incidencia": id},
             { $set: req.body }
@@ -180,7 +180,7 @@ export const putIncidencia = async (req, res)=>{
 };
 export const delIncidencia = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await incidencia.deleteOne(
             { "id_incidencia": id }
         );

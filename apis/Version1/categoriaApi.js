@@ -5,7 +5,7 @@ let db = await coneccion();
 let categoria = db.collection("categoria");
 export const getCategoriaById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await categoria.aggregate([
             {
                 $match: { "id_categoria": id } 
@@ -49,7 +49,7 @@ export const postCategoria = async(req, res)=>{
 };
 export const putCategoria = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await categoria.updateOne(
             { "id_categoria": id},
             { $set: req.body }
@@ -61,7 +61,7 @@ export const putCategoria = async (req, res)=>{
 };
 export const delCategoria = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await categoria.deleteOne(
             { "id_categoria": id }
         );

@@ -5,7 +5,7 @@ let db = await coneccion();
 let telefono = db.collection("telefono");
 export const getTelefonoById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await telefono.aggregate([
             {
                 $match: { "id_telefono": id } 
@@ -73,7 +73,7 @@ export const postTelefono = async(req, res)=>{
 };
 export const putTelefono = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await telefono.updateOne(
             { "id_telefono": id},
             { $set: req.body }
@@ -85,7 +85,7 @@ export const putTelefono = async (req, res)=>{
 };
 export const delTelefono = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await telefono.deleteOne(
             { "id_telefono": id }
         );

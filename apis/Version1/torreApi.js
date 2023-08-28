@@ -5,7 +5,7 @@ let db = await coneccion();
 let torre = db.collection("torre");
 export const getTorreById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await torre.aggregate([
             {
                 $match: { "id_torre": id } 
@@ -75,7 +75,7 @@ export const postTorre = async(req, res)=>{
 };
 export const putTorre = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await torre.updateOne(
             { "id_torre": id},
             { $set: req.body }
@@ -87,7 +87,7 @@ export const putTorre = async (req, res)=>{
 };
 export const delTorre = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await torre.deleteOne(
             { "id_torre": id }
         );

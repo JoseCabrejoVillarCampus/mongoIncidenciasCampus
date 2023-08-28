@@ -5,7 +5,7 @@ let db = await coneccion();
 let email = db.collection("email");
 export const getEmailById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await email.aggregate([
             {
                 $match: { "id_email": id } 
@@ -73,7 +73,7 @@ export const postEmail = async(req, res)=>{
 };
 export const putEmail = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await email.updateOne(
             { "id_email": id},
             { $set: req.body }
@@ -85,7 +85,7 @@ export const putEmail = async (req, res)=>{
 };
 export const delEmail = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await email.deleteOne(
             { "id_email": id }
         );

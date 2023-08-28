@@ -5,7 +5,7 @@ let db = await coneccion();
 let equipo = db.collection("equipo");
 export const getEquipoById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
 
         let result = await equipo.aggregate([
             {
@@ -186,7 +186,7 @@ export const postEquipo = async(req, res)=>{
 };
 export const putEquipo = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await equipo.updateOne(
             { "id_equipo": id},
             { $set: req.body }
@@ -198,7 +198,7 @@ export const putEquipo = async (req, res)=>{
 };
 export const delEquipo = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await equipo.deleteOne(
             { "id_equipo": id }
         );

@@ -5,7 +5,7 @@ let db = await coneccion();
 let teclado = db.collection("teclado");
 export const getTecladoById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await teclado.aggregate([
             {
                 $match: { "id_teclado": id } 
@@ -75,7 +75,7 @@ export const postTeclado = async(req, res)=>{
 };
 export const putTeclado = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await teclado.updateOne(
             { "id_teclado": id},
             { $set: req.body }
@@ -87,7 +87,7 @@ export const putTeclado = async (req, res)=>{
 };
 export const delTeclado = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await teclado.deleteOne(
             { "id_teclado": id }
         );

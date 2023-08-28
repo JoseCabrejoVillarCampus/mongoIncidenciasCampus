@@ -6,7 +6,7 @@ let diadema = db.collection("diadema");
 
 export const getDiademaById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await diadema.aggregate([
             {
                 $match: { "id_diadema": id } 
@@ -76,7 +76,7 @@ export const postDiadema = async(req, res)=>{
 };
 export const putDiadema = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await diadema.updateOne(
             { "id_diadema": id},
             { $set: req.body }
@@ -88,7 +88,7 @@ export const putDiadema = async (req, res)=>{
 };
 export const delDiadema = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await diadema.deleteOne(
             { "id_diadema": id }
         );

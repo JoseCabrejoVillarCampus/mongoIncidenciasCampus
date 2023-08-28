@@ -5,7 +5,7 @@ let db = await coneccion();
 let tipo_incidencia = db.collection("tipo_incidencia");
 export const getTipoById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await tipo_incidencia.aggregate([
             {
                 $match: { "id_tipo_incidencia": id } 
@@ -49,7 +49,7 @@ export const postTipo = async(req, res)=>{
 };
 export const putTipo = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await tipo_incidencia.updateOne(
             { "id_tipo_incidencia": id},
             { $set: req.body }

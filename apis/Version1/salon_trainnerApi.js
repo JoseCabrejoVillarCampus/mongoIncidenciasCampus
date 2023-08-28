@@ -5,7 +5,7 @@ let db = await coneccion();
 let salon_trainner = db.collection("salon_trainner");
 export const getSalonTrainnerById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await salon_trainner.aggregate([
             {
                 $match: { "id_salon_trainner": id } 
@@ -95,7 +95,7 @@ export const postSalonTrainner = async(req, res)=>{
 };
 export const putSalonTrainner = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await salon_trainner.updateOne(
             { "id_salon_trainner": id},
             { $set: req.body }
@@ -107,7 +107,7 @@ export const putSalonTrainner = async (req, res)=>{
 };
 export const delSalonTrainner = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await salon_trainner.deleteOne(
             { "id_salon_trainner": id }
         );

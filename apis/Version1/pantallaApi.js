@@ -5,7 +5,7 @@ let db = await coneccion();
 let pantalla = db.collection("pantalla");
 export const getPantallaById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await pantalla.aggregate([
             {
                 $match: { "id_pantalla": id } 
@@ -75,7 +75,7 @@ export const postPantalla = async(req, res)=>{
 };
 export const putPantalla = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await pantalla.updateOne(
             { "id_pantalla": id},
             { $set: req.body }
@@ -87,7 +87,7 @@ export const putPantalla = async (req, res)=>{
 };
 export const delPantalla = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await pantalla.deleteOne(
             { "id_pantalla": id }
         );

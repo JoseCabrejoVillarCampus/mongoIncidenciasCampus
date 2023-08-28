@@ -5,7 +5,7 @@ let db = await coneccion();
 let reporte_incidencia = db.collection("reporte_incidencia");
 export const getReporteById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await reporte_incidencia.aggregate([
             {
                 $match: { "id_reporte": id } 
@@ -49,7 +49,7 @@ export const postReporte = async(req, res)=>{
 };
 export const putReporte = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await reporte_incidencia.updateOne(
             { "id_reporte": id},
             { $set: req.body }
@@ -61,7 +61,7 @@ export const putReporte = async (req, res)=>{
 };
 export const delReporte = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await reporte_incidencia.deleteOne(
             { "id_reporte": id }
         );
