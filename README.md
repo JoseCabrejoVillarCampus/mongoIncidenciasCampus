@@ -292,13 +292,17 @@ El metodo **GET BY ID** para todas las tablas es el mismo del endpoint,pero si d
 <span style="color:blue;">EJEMPLO:</span>
 
 ```js
-  http://${config.hostname}:${config.port}/tipoIncidencia/2
+  http://${config.hostname}:${config.port}/area?id=2
 ```
 
+Validador  en Ejecucion:
 
-En este caso estamos buscando dentro de la coleccion tipoIncidencia, el id especifico 2, que corresponde a nuestro "cit_cod", creado en los esquemeas
+<img src="./img/IDVAL.png">
 
-<img src="./img/getID.png"><br>
+
+En este caso estamos buscando dentro de la coleccion area, el id especifico 2, que corresponde a nuestro "id_area", creado en los esquemeas
+
+<img src="./img/GETID.png"><br>
 
 
 pero aca es necesario ajustar la version
@@ -320,31 +324,24 @@ varia.
 
 <span style="color:blue;">EJEMPLO:</span>
 
-<img src="./img/post.png">
+<img src="./img/POST.png"><br><br>
+
+Validador  en Ejecucion:
+
+<img src="./img/POSTVAL.png">
+
 
 
 ## Metodo PUT para todas las colecciones
 
-El metodo put funciona igual en todas las colecciones, en la misma url del metodo colecciones/id,
+El metodo put funciona igual en todas las colecciones, en la misma url del metodo colecciones?id=,
 este parametro id dentro del body se omite. 
 El body es donde vamos a hacer la insersion de datos y contiene los campos de la coleccion, para cada coleccion el body 
 varia.
 
 ```js
-  version:[1.0.0]
+  http://${config.hostname}:${config.port}/area?id=2
 ```
-
-<span style="color:blue;">EJEMPLO:</span>
-
-<img src="./img/put.png">
-
-
-
-
-## Metodo DELETE para todas las colecciones
-
-El metodo delete funciona igual en todas las colecciones, en la misma url colecciones/id,
-aunque en este metodo lo unico que necesitamos es esta url para efectuarlo, sin necesidad de body
 
 ```js
   version:[1.0.0]
@@ -352,7 +349,29 @@ aunque en este metodo lo unico que necesitamos es esta url para efectuarlo, sin 
 
 <span style="color:blue;">EJEMPLO:</span>
 
-<img src="./img/delejem.png"><br><br>
+<img src="./img/PUT.png">
+
+Validador  en Ejecucion:
+
+<img src="./img/PUVAL.png">
+
+
+
+## Metodo DELETE para todas las colecciones
+
+El metodo delete funciona igual en todas las colecciones, en la misma url colecciones?id=,
+aunque en este metodo lo unico que necesitamos es esta url para efectuarlo, sin necesidad de body
+
+```js
+  http://${config.hostname}:${config.port}/tipoIncidencia?id=2
+```
+```js
+  version:[1.0.0]
+```
+
+<span style="color:blue;">EJEMPLO:</span>
+
+<img src="./img/DEL.png"><br><br>
 
 
 # TECNOLOGIAS USADAS
