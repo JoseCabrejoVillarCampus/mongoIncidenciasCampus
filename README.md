@@ -1,6 +1,6 @@
-# Citas MongoDB
+# Incidencias MongoDB
 
-En este Taller estamos Generando una Base de Datos en mongo apartir de una base de datos de Mysql para un sistema de control de citas, imlementado nuevas tecnologias para optimizar las consultas
+En este Taller estamos Generando una Base de Datos en mongo apartir de una base de datos de Mysql para un sistema de control de incidencias, implementado nuevas tecnologias para optimizar las consultas, que permita a los Trainners reportar problemas de los equipos pertenecientes a salones por zonas
 
 
 # DATABASE A USAR
