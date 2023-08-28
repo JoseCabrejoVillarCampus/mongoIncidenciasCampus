@@ -5,7 +5,7 @@ let db = await coneccion();
 let area = db.collection("area");
 export const getAreaById = async (req, res, next) => {
     try {
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await area.aggregate([
             {
                 $match: { "id_area": id } 
@@ -49,7 +49,7 @@ export const postArea = async(req, res)=>{
 };
 export const putArea = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await area.updateOne(
             { "id_area": id},
             { $set: req.body }
@@ -61,7 +61,7 @@ export const putArea = async (req, res)=>{
 };
 export const delArea = async (req, res)=>{
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.query.id);
         let result = await area.deleteOne(
             { "id_area": id }
         );
