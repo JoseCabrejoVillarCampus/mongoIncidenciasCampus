@@ -11,6 +11,9 @@ export const appMiddlewareParamIncidencia = Router();
 appMiddlewareDataIncidencia.use(GetAllIncidencias, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_incidencia:codigoIncidencia,categoria:categoria, fecha: fecha, equipo:equipo,lugar:lugar, trainner: trainner} = req.body;
+    let json = {codigoIncidencia, categoria, fecha, equipo, lugar, trainner};
+    return res.status(200).json(json);
     next();
 });
 

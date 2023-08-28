@@ -10,6 +10,9 @@ export const appMiddlewareParamTorre = Router();
 appMiddlewareDataTorre.use(GetAllTorres, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_torre:codigoTorre,marca_torre:marca, color_torre: color, estado:estado} = req.body;
+    let json = {codigoTorre, marca, color, estado};
+    return res.status(200).json(json);
     next();
 });
 

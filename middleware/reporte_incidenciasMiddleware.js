@@ -10,6 +10,9 @@ export const appMiddlewareParamReporte = Router();
 appMiddlewareDataReporte.use(GetAllReportes, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_reporte:reporte,fecha_reporte:fecha} = req.body;
+    let json = {reporte, fecha};
+    return res.status(200).json(json);
     next();
 });
 

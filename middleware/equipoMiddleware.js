@@ -11,6 +11,9 @@ export const appMiddlewareParamEquipo = Router();
 appMiddlewareDataEquipo.use(GetAllEquipos, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_equipo:equipo,pantalla:pantalla, torre: torre, teclado:teclado,mouse:mouse, diadema: diadema, salon: salon} = req.body;
+    let json = {equipo, pantalla, torre, teclado, mouse, diadema, salon};
+    return res.status(200).json(json);
     next();
 });
 

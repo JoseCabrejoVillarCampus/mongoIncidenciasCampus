@@ -10,6 +10,9 @@ export const appMiddlewareParamTipoIncidencia = Router();
 appMiddlewareDataTipoIncidencia.use(GetAllTipoIncidencia, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_tipo_incidencia:tipo,tipo_incidencia:tipoIncidente} = req.body;
+    let json = {tipo, tipoIncidente};
+    return res.status(200).json(json);
     next();
 });
 

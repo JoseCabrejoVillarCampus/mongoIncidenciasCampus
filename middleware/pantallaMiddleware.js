@@ -11,6 +11,9 @@ export const appMiddlewareParamPantalla = Router();
 appMiddlewareDataPantalla.use(GetAllPantallas, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_pantalla:codigoPantalla,marca_pantalla:marca, color_pantalla: color, estado:estado} = req.body;
+    let json = {codigoPantalla, marca, color, estado};
+    return res.status(200).json(json);
     next();
 });
 

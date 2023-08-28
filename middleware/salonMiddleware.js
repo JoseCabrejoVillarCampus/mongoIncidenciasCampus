@@ -10,6 +10,9 @@ export const appMiddlewareParamSalon = Router();
 appMiddlewareDataSalon.use(GetAllSalones, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_salon:Codigosalon,salon:salon, area:area} = req.body;
+    let json = {Codigosalon, salon, area};
+    return res.status(200).json(json);
     next();
 });
 

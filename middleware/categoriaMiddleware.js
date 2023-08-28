@@ -11,6 +11,9 @@ export const appMiddlewareParamCategoria = Router();
 appMiddlewareDataCategoria.use(GetAllCategorias, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_categoria:codigoCategoria,tipo_categoria:tipo} = req.body;
+    let json = {codigoCategoria, tipo};
+    return res.status(200).json(json);
     next();
 });
 

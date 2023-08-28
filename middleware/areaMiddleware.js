@@ -13,6 +13,9 @@ export const appMiddlewareParamArea = Router();
 appMiddlewareDataArea.use(GetAllAreas, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_area:codigoArea,nombre_area:nombre} = req.body;
+    let json = {codigoArea, nombre};
+    return res.status(200).json(json);
     next();
 });
 

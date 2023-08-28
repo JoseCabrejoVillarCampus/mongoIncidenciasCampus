@@ -10,6 +10,9 @@ export const appMiddlewareParamTelefono = Router();
 appMiddlewareDataTelefono.use(GetAllTelefonos, async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json(errors);
+    let {id_telefono:codigoTelefono,numero_telefono:numeroTelefono, trainner:trainner} = req.body;
+    let json = {codigoTelefono, numeroTelefono, trainner};
+    return res.status(200).json(json);
     next();
 });
 
