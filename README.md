@@ -12,22 +12,21 @@ Este es el esquema de la base de datos en <span style="color:orange;">MySQL</spa
 # DEPENDENCIAS IMPLEMENTADAS
 
 ```JSON
-    "class-transformer": "0.5.1",
-    "class-validator": "0.14.0",
-    "cookie-parser": "1.4.6",
-    "dotenv": "16.3.1",
-    "express": "4.18.2",
-    "express-query-boolean": "2.0.0",
-    "express-rate-limit": "6.8.1",
-    "express-routes-versioning": "^1.0.1",
-    "express-session": "1.17.3",
-    "express-validator": "7.0.1",
-    "jose": "4.14.4",
-    "mongodb": "5.7.0",
-    "nodemon": "3.0.1",
-    "passport": "0.6.0",
-    "passport-http-bearer": "1.0.1",
-    "reflect-metadata": "0.1.13"
+        "class-transformer": "0.5.1",
+        "class-validator": "0.14.0",
+        "cookie-parser": "1.4.6",
+        "dotenv": "16.3.1",
+        "express": "4.18.2",
+        "express-query-boolean": "2.0.0",
+        "express-rate-limit": "6.8.1",
+        "express-routes-versioning": "^1.0.1",
+        "express-session": "1.17.3",
+        "express-validator": "7.0.1",
+        "jose": "4.14.4",
+        "mongodb": "5.7.0",
+        "nodemon": "3.0.1",
+        "passport": "0.6.0",
+        "passport-http-bearer": "1.0.1"
 ```
 <br><br>
 
@@ -355,6 +354,177 @@ Validador  en Ejecucion:
 
 <img src="./img/PUVAL.png">
 
+### BODY PARA LAS COLECCIONES METODO POST Y PUT:
+
+<span style="color:blue;">Para Incidencia (incidencia)</span>
+
+```js
+  {
+    "id_incidencia": 0,
+    "categoria_incidencia": 0,
+    "tipo_incidencia": 0,
+    "descripcion_incidencia": "",
+    "fecha_incidencia": 0,
+    "equipo_incidencia": 0,
+    "lugar_incidencia": 0,
+    "trainner_reporta_incidencia": 0
+  }
+```
+
+<span style="color:blue;">Para Equipo (equipo)</span>
+
+```js
+  {
+    "id_equipo": 0,
+    "pantalla_equipo": 0,
+    "torre_equipo": 0,
+    "teclado_equipo": 0,
+    "mouse_equipo": 0,
+    "diadema_equipo": 0,
+    "salon_equipo": 0
+  }
+```
+
+<span style="color:blue;">Para Diadema (diadema)</span>
+
+```js
+  {
+    "id_diadema": 0,
+    "marca_diadema": "",
+    "color_diadema": "",
+    "estado_diadema": 0
+  }
+```
+
+<span style="color:blue;">Para Mouse (mouse)</span>
+
+```js
+  {
+    "id_mouse": 0,
+    "marca_mouse": "",
+    "color_mouse": "",
+    "estado_mouse": 0
+  }
+```
+
+<span style="color:blue;">Para Teclado (teclado)</span>
+
+```js
+  {
+    "id_teclado": 0,
+    "marca_teclado": "",
+    "color_teclado": "",
+    "estado_teclado": 0
+  }
+```
+
+<span style="color:blue;">Para Torre (torre)</span>
+
+```js
+  {
+    "id_torre": 0,
+    "marca_torre": "",
+    "color_torre": "",
+    "estado_torre": 0
+  }
+```
+
+<span style="color:blue;">Para Pantalla (pantalla)</span>
+
+```js
+  {
+    "id_pantalla": 0,
+    "marca_pantalla": "",
+    "color_pantalla": "",
+    "estado_pantalla": 0
+  }
+```
+
+<span style="color:blue;">Para Email (email)</span>
+
+```js
+  {
+    "id_email": 0,
+    "email": "",
+    "trainner_email": 0
+  }
+```
+
+<span style="color:blue;">Para Telefono (telefono)</span>
+
+```js
+  {
+    "id_telefono": 0,
+    "numero_telefono": "",
+    "trainner_telefono": 0
+  }
+```
+
+<span style="color:blue;">Para Salon_trainner (salon_trainner)</span>
+
+```js
+  {
+    "id_salon_trainner": 0,
+    "id_trainner": 0,
+    "id_salon": 0
+  }
+```
+
+<span style="color:blue;">Para salon (salon)</span>
+
+```js
+  {
+    "id_salon": 0,
+    "nombre_salon": "",
+    "area_salon": 0
+  }
+```
+
+<span style="color:blue;">Para Trainners (trainners)</span>
+
+```js
+  {
+    "id_trainner": 0,
+    "nombre_trainner": "",
+    "jornada_trainner": 0
+  }
+```
+
+<span style="color:blue;">Para Estado (trainners)</span>
+
+```js
+  {
+    "id_estado": 0,
+    "nombre_estado": ""
+  }
+```
+
+<span style="color:blue;">Para Reporte_incidencia (reporte_incidencia)</span>
+
+```js
+  {
+    "id_reporte": 0,
+    "fecha_reporte": "0000-00-00"
+  }
+```
+
+<span style="color:blue;">Para Categoria (categoria)</span>
+
+```js
+  {
+    "id_categoria": 0,
+    "tipo_categoria": ""
+  }
+```
+
+<span style="color:blue;">Para Tipo_incidencia (tipo_incidencia)</span>
+
+```js
+  {
+    "id_tipo_incidencia": 0,
+    "tipo_incidencia": ""
+  }
+```
 
 
 ## Metodo DELETE para todas las colecciones

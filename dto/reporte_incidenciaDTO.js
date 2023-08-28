@@ -9,5 +9,5 @@ export const GetAllReportes= [
     check("fecha_reporte")
     .notEmpty().withMessage("El campos fecha es Obligatorio")
     .isString().withMessage("El campos fecha debe ser de tipo String")
-    .matches(/^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$/).withMessage("Solo admite letras"),
+    .matches(/^(?:\d{4})-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/).withMessage("Solo admite letras"),
 ]

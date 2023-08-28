@@ -502,26 +502,3 @@ db.tipo_incidencia.insertMany([{
         tipo_incidencia: "Tipo de incidencia 5"
     }
 ]);
-
-use("db_incidencias");
-db.telefono.aggregate([
-    {
-        $lookup: {
-            from: "trainners",
-            localField: "trainner_telefono",
-            foreignField: "id_trainner",
-            as: "trainner"
-        }
-    },
-    {
-        $unwind: "$trainner"
-    },
-    {
-        $project: {
-            "_id": 0,
-            "codigoTelefono": "$id_telefono",
-            "numeroTelefono": "$numero_telefono",
-            "trainner": "$trainner.nombre_trainner"
-        }
-    }
-]);

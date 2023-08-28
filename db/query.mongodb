@@ -578,7 +578,7 @@ db.createCollection("reporte_incidencia", {
                 },
                 fecha_reporte: {
                     bsonType: "string",
-                    pattern: "^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ,.#@\\s-]+$",
+                    pattern: "^(?:\d{4})-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$",
                     description: "Debe informar el campo fecha y este debe ser un string"
                 }
             }
